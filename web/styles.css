@@ -441,11 +441,11 @@ button:disabled {
 
 .form-view {
   background: var(--beige-050);
-  padding: 32px 16px 56px;
+  padding: 24px 12px 56px;
 }
 
 .form-shell {
-  width: min(100%, 1040px);
+  width: min(100%, 720px);
   margin: 0 auto;
 }
 
@@ -457,7 +457,7 @@ button:disabled {
 }
 
 .page-title-block {
-  margin: 0 0 26px;
+  margin: 0 0 20px;
 }
 
 .page-title-block h1 {
@@ -517,12 +517,12 @@ button:disabled {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin: 0 0 14px;
+  margin: 0 0 12px;
 }
 
 .section-heading h3 {
   margin: 0;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 600;
   color: var(--green-950);
 }
@@ -550,9 +550,9 @@ button:disabled {
 }
 
 .section-block {
-  margin: 0 0 28px;
+  margin: 0 0 20px;
   display: grid;
-  gap: 16px;
+  gap: 14px;
 }
 
 .section-block.compact-gap {
@@ -561,12 +561,12 @@ button:disabled {
 
 .big-action-button {
   width: 100%;
-  min-height: 64px;
+  min-height: 50px;
   border: none;
-  border-radius: 24px;
+  border-radius: 20px;
   background: var(--green-600);
   color: #fff;
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 700;
 }
 
@@ -579,10 +579,10 @@ button:disabled {
 }
 
 .big-input {
-  min-height: 78px;
-  border-radius: 24px;
-  padding: 0 24px;
-  font-size: 22px;
+  min-height: 56px;
+  border-radius: 20px;
+  padding: 0 20px;
+  font-size: 16px;
   font-weight: 500;
 }
 
@@ -603,19 +603,19 @@ button:disabled {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
   margin-bottom: 28px;
 }
 
 .selection-card {
   border: 2px solid var(--border);
   background: #fff;
-  border-radius: 24px;
-  padding: 28px;
+  border-radius: 20px;
+  padding: 20px;
   display: grid;
   justify-items: start;
-  gap: 12px;
+  gap: 10px;
   text-align: left;
 }
 
@@ -626,11 +626,17 @@ button:disabled {
 
 .selection-card strong,
 .wide-card strong,
-.time-card strong,
 .result-hero-card h3,
 .result-card h4,
 .history-card strong {
-  font-size: 28px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--green-950);
+}
+
+.time-card strong {
+  display: block;
+  font-size: 18px;
   font-weight: 700;
   color: var(--green-950);
 }
@@ -696,13 +702,13 @@ button:disabled {
 .wide-card {
   width: 100%;
   border: 2px solid var(--border);
-  border-radius: 24px;
+  border-radius: 20px;
   background: #fff;
-  padding: 24px;
+  padding: 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 14px;
   text-align: left;
 }
 
@@ -713,8 +719,8 @@ button:disabled {
 
 .wide-card strong {
   display: block;
-  margin-bottom: 4px;
-  font-size: 24px;
+  margin-bottom: 3px;
+  font-size: 20px;
 }
 
 .wide-card-indicator {
@@ -733,15 +739,15 @@ button:disabled {
 .time-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
+  gap: 16px;
   margin-bottom: 20px;
 }
 
 .time-card {
   border: 2px solid var(--border);
-  border-radius: 24px;
+  border-radius: 20px;
   background: #fff;
-  padding: 26px 18px;
+  padding: 18px 14px;
   text-align: center;
 }
 
@@ -752,17 +758,18 @@ button:disabled {
 
 .time-card strong {
   display: block;
-  font-size: 28px;
+  font-size: 18px;
 }
 
 .time-card span {
   display: block;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 .form-cta {
   margin: 12px 0 18px;
-  font-size: 22px;
+  min-height: 50px;
+  font-size: 16px;
 }
 
 .result-section,

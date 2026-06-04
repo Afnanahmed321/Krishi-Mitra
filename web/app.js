@@ -715,6 +715,10 @@ const elements = {
   formSubtitle: document.getElementById("formSubtitle"),
   simpleSoilSection: document.getElementById("simpleSoilSection"),
   advancedUploadSection: document.getElementById("advancedUploadSection"),
+  districtSection: document.getElementById("districtSection"),
+  waterSection: document.getElementById("waterSection"),
+  timeSection: document.getElementById("timeSection"),
+  previousCropSection: document.getElementById("previousCropSection"),
   useLocationBtn: document.getElementById("useLocationBtn"),
   districtInput: document.getElementById("districtInput"),
   locationStatus: document.getElementById("locationStatus"),
@@ -987,6 +991,7 @@ function showView(view) {
   elements.analysisView.hidden = view !== "analysis";
   
   if (view === "form") {
+    renderMode();
     renderSelections();
   }
 }
@@ -1010,11 +1015,16 @@ function renderMode() {
   elements.formTitle.textContent = simple
     ? t("form.simpleTitle")
     : t("form.advancedTitle");
-  elements.formSubtitle.textContent = simple
-    ? t("form.simpleSubtitle")
-    : t("form.advancedSubtitle");
+  if (elements.formSubtitle) {
+    elements.formSubtitle.textContent = simple
+      ? t("form.simpleSubtitle")
+      : t("form.advancedSubtitle");
+  }
   elements.simpleSoilSection.hidden = !simple;
   elements.advancedUploadSection.hidden = simple;
+  elements.districtSection.hidden = !simple;
+  elements.waterSection.hidden = !simple;
+  elements.previousCropSection.hidden = !simple;
   elements.submitButton.textContent = t("form.continue");
 }
 

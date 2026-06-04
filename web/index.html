@@ -156,31 +156,33 @@
           </div>
 
           <form id="predictionForm" class="farm-form">
-            <div class="section-heading">
-              <div class="section-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 21s-6-4.35-6-10a6 6 0 1 1 12 0c0 5.65-6 10-6 10z"></path>
-                  <circle cx="12" cy="11" r="2.5"></circle>
-                </svg>
+            <div id="districtSection">
+              <div class="section-heading">
+                <div class="section-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 21s-6-4.35-6-10a6 6 0 1 1 12 0c0 5.65-6 10-6 10z"></path>
+                    <circle cx="12" cy="11" r="2.5"></circle>
+                  </svg>
+                </div>
+                <h3 id="districtSectionTitle">Your district</h3>
               </div>
-              <h3 id="districtSectionTitle">Your district</h3>
-            </div>
 
-            <div class="section-block">
-              <button id="useLocationBtn" class="big-action-button" type="button">
-                Use Current Location
-              </button>
+              <div class="section-block">
+                <button id="useLocationBtn" class="big-action-button" type="button">
+                  Use Current Location
+                </button>
 
-              <input
-                id="districtInput"
-                class="text-input big-input"
-                type="text"
-                placeholder="Your area or city will appear here"
-              />
+                <input
+                  id="districtInput"
+                  class="text-input big-input"
+                  type="text"
+                  placeholder="Your area or city will appear here"
+                />
 
-              <p id="locationStatus" class="helper-copy">
-                Use current location to auto-fill your area, or type your city manually.
-              </p>
+                <p id="locationStatus" class="helper-copy">
+                  Use current location to auto-fill your area, or type your city manually.
+                </p>
+              </div>
             </div>
 
             <div id="simpleSoilSection">
@@ -238,17 +240,18 @@
               </label>
             </div>
 
-            <div class="section-heading">
-              <div class="section-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 3v18"></path>
-                  <path d="M8 7c0-2 1.8-4 4-4s4 2 4 4-1.8 4-4 4-4 1.8-4 4 1.8 4 4 4 4-2 4-4"></path>
-                </svg>
+            <div id="waterSection">
+              <div class="section-heading">
+                <div class="section-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 3v18"></path>
+                    <path d="M8 7c0-2 1.8-4 4-4s4 2 4 4-1.8 4-4 4-4 1.8-4 4 1.8 4 4 4 4-2 4-4"></path>
+                  </svg>
+                </div>
+                <h3 id="waterSectionTitle">Do you have regular water for farming?</h3>
               </div>
-              <h3 id="waterSectionTitle">Do you have regular water for farming?</h3>
-            </div>
 
-            <div id="waterCards" class="wide-card-stack">
+              <div id="waterCards" class="wide-card-stack">
               <button class="wide-card" type="button" data-water="yes">
                 <div>
                   <strong id="waterYesTitle">Yes, regular water</strong>
@@ -264,53 +267,57 @@
                 <span class="wide-card-indicator"></span>
               </button>
             </div>
+            </div>
 
-            <div class="section-heading">
-              <div class="section-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M8 2v4"></path>
-                  <path d="M16 2v4"></path>
-                  <rect x="3" y="5" width="18" height="16" rx="2"></rect>
-                  <path d="M3 10h18"></path>
-                </svg>
+            <div id="timeSection">
+              <div class="section-heading">
+                <div class="section-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8 2v4"></path>
+                    <path d="M16 2v4"></path>
+                    <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                    <path d="M3 10h18"></path>
+                  </svg>
+                </div>
+                <h3 id="timeSectionTitle">When do you want to start farming?</h3>
               </div>
-              <h3 id="timeSectionTitle">When do you want to start farming?</h3>
-            </div>
 
-            <div id="timeCards" class="time-grid">
-              <button class="time-card" type="button" data-time="now">
-                <strong id="timeNowTitle">Now</strong>
-                <span id="timeNowDesc">Immediately</span>
-              </button>
-              <button class="time-card" type="button" data-time="1-month">
-                <strong id="timeMonthTitle">1 month</strong>
-                <span id="timeMonthDesc">Soon</span>
-              </button>
-              <button class="time-card" type="button" data-time="2-3-months">
-                <strong id="timeLaterTitle">2-3 months</strong>
-                <span id="timeLaterDesc">Later</span>
-              </button>
-            </div>
-
-            <div class="section-block compact-gap">
-              <input id="cultivationDateInput" class="text-input big-input" type="date" />
-              <input id="irrigationMmInput" class="text-input big-input" type="number" min="0" step="0.1" placeholder="Planned irrigation in mm (optional)" />
-            </div>
-
-            <div class="section-heading">
-              <div class="section-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M7 20h10"></path>
-                  <path d="M12 20v-9"></path>
-                  <path d="M12 11c0-3 2.3-5.5 5.2-5.9"></path>
-                  <path d="M12 11c0-3-2.3-5.5-5.2-5.9"></path>
-                </svg>
+              <div id="timeCards" class="time-grid">
+                <button class="time-card" type="button" data-time="now">
+                  <strong id="timeNowTitle">Now</strong>
+                  <span id="timeNowDesc">Immediately</span>
+                </button>
+                <button class="time-card" type="button" data-time="1-month">
+                  <strong id="timeMonthTitle">1 month</strong>
+                  <span id="timeMonthDesc">Soon</span>
+                </button>
+                <button class="time-card" type="button" data-time="2-3-months">
+                  <strong id="timeLaterTitle">2-3 months</strong>
+                  <span id="timeLaterDesc">Later</span>
+                </button>
               </div>
-              <h3 id="previousCropTitle">Previous crop (optional)</h3>
+
+              <div class="section-block compact-gap">
+                <input id="cultivationDateInput" class="text-input big-input" type="date" />
+                <input id="irrigationMmInput" class="text-input big-input" type="number" min="0" step="0.1" placeholder="Planned irrigation in mm (optional)" />
+              </div>
             </div>
 
-            <div class="section-block">
-              <select id="previousCropSelect" class="text-input big-input">
+            <div id="previousCropSection">
+              <div class="section-heading">
+                <div class="section-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 20h10"></path>
+                    <path d="M12 20v-9"></path>
+                    <path d="M12 11c0-3 2.3-5.5 5.2-5.9"></path>
+                    <path d="M12 11c0-3-2.3-5.5-5.2-5.9"></path>
+                  </svg>
+                </div>
+                <h3 id="previousCropTitle">Previous crop (optional)</h3>
+              </div>
+
+              <div class="section-block">
+                <select id="previousCropSelect" class="text-input big-input">
                 <option id="previousCropPlaceholder" value="">Select if you remember</option>
                 <option value="rice">Rice</option>
                 <option value="wheat">Wheat</option>
@@ -321,6 +328,7 @@
                 <option value="chickpea">Chickpea</option>
                 <option value="none">None</option>
               </select>
+              </div>
             </div>
 
             <button id="submitButton" class="cta-button form-cta" type="submit">

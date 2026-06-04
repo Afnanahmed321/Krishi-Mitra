@@ -303,7 +303,7 @@ def extract_image_text(path):
         return pytesseract.image_to_string(Image.open(path))
     except Exception as error:
         raise RuntimeError(
-            "Could not OCR this image. Install the Tesseract app or use a text PDF."
+            "Could not OCR this image."
         ) from error
 
 
