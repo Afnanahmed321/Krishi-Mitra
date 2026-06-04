@@ -20,6 +20,7 @@ const translations = {
       },
       chooseLanguage: "CHOOSE YOUR LANGUAGE",
       start: "Start Recommendation",
+      buySell: "Click here to Buy/Sell Crops",
       footer: "Free | No registration | Works with saved history",
     },
     mode: {
@@ -99,7 +100,7 @@ const translations = {
       historyTitle: "Saved recommendations",
       historyCount: "{{count}} saved recommendations",
       refresh: "Refresh",
-      heroSaved: "Saved as {{id}} on {{date}}",
+      heroSaved: "Saved on {{date}}",
       sections: {
         whyFit: "Why this crop fits",
         watch: "Things to watch",
@@ -241,6 +242,7 @@ const translations = {
       },
       chooseLanguage: "ನಿಮ್ಮ ಭಾಷೆ ಆಯ್ಕೆ ಮಾಡಿ",
       start: "ಶಿಫಾರಸು ಪ್ರಾರಂಭಿಸಿ",
+      buySell: "ಬೆಳೆ ಖರೀದಿ/ಮಾರಾಟ ಮಾಡಲು ಇಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡಿ",
       footer: "ಉಚಿತ | ನೋಂದಣಿ ಬೇಡ | ಉಳಿಸಿದ ಇತಿಹಾಸದೊಂದಿಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ",
     },
     mode: {
@@ -462,6 +464,7 @@ const translations = {
       },
       chooseLanguage: "अपनी भाषा चुनें",
       start: "सिफारिश शुरू करें",
+      buySell: "फसल खरीद/बिक्री के लिए यहां क्लिक करें",
       footer: "मुफ्त | रजिस्ट्रेशन नहीं | सेव की गई हिस्ट्री के साथ काम करता है",
     },
     mode: {
@@ -673,7 +676,7 @@ const state = {
   mode: "simple",
   selectedSoil: "red",
   selectedWater: "yes",
-  selectedTime: "now",
+  selectedTime: "1-month",
   latitude: null,
   longitude: null,
   activePredictionId: null,
@@ -699,6 +702,7 @@ const elements = {
   formView: document.getElementById("formView"),
   analysisView: document.getElementById("analysisView"),
   startBtn: document.getElementById("startBtn"),
+  buySellBtn: document.getElementById("buySellBtn"),
   backToLandingBtn: document.getElementById("backToLandingBtn"),
   backToModeBtn: document.getElementById("backToModeBtn"),
   backToFormBtn: document.getElementById("backToFormBtn"),
@@ -810,6 +814,9 @@ function initialiseLanguage() {
 
 function initialiseInteractions() {
   elements.startBtn.addEventListener("click", () => showView("mode"));
+  elements.buySellBtn.addEventListener("click", () => {
+    window.location.href = "https://krushimitra-business-j6uv.vercel.app/";
+  });
   elements.backToLandingBtn.addEventListener("click", () => showView("landing"));
   elements.backToModeBtn.addEventListener("click", () => showView("mode"));
   elements.backToFormBtn.addEventListener("click", () => showView("form"));
@@ -856,7 +863,7 @@ function initialiseInteractions() {
 }
 
 function initialiseDefaults() {
-  applyTimePreset("now");
+  applyTimePreset("1-month");
   setLocationMessage("form.locationHelp");
 }
 
@@ -895,6 +902,7 @@ function applyTranslations() {
   elements.featureChipEasy.textContent = t("landing.chips.easy");
   elements.landingLanguageLabel.textContent = t("landing.chooseLanguage");
   elements.startBtn.textContent = t("landing.start");
+  elements.buySellBtn.textContent = t("landing.buySell");
   elements.landingFooter.textContent = t("landing.footer");
 
   elements.modeHeaderTitle.textContent = t("mode.header");
@@ -977,6 +985,10 @@ function showView(view) {
   elements.modeView.hidden = view !== "mode";
   elements.formView.hidden = view !== "form";
   elements.analysisView.hidden = view !== "analysis";
+  
+  if (view === "form") {
+    renderSelections();
+  }
 }
 
 function setMode(mode) {

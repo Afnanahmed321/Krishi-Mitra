@@ -177,6 +177,29 @@ button:disabled {
   box-shadow: 0 6px 24px rgba(46, 125, 50, 0.35);
 }
 
+.cta-button.secondary {
+  background: linear-gradient(145deg, #2e7d32, #1b5e20);
+  box-shadow: 0 6px 24px rgba(27, 94, 32, 0.35);
+  margin-top: 12px;
+}
+
+.cta-button.buy-sell-button {
+  background: transparent;
+  color: #2e7d32;
+  border: 2px solid #2e7d32;
+  box-shadow: none;
+  margin-top: 12px;
+  font-weight: 700;
+}
+
+.cta-button.buy-sell-button:hover {
+  background: rgba(46, 125, 50, 0.08);
+}
+
+.cta-button.buy-sell-button:active {
+  background: rgba(46, 125, 50, 0.15);
+}
+
 .landing-footer {
   margin: 20px 0 0;
   font-size: 12.5px;

@@ -5,6 +5,7 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
+from dotenv import load_dotenv
 import httpx
 from bson import ObjectId
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
@@ -25,7 +26,11 @@ except ImportError:
 
 BASE_DIR = Path(__file__).resolve().parent
 WEB_DIR = BASE_DIR / "web"
-MONGODB_URI = os.getenv("MONGODB_URI", "mongodb+srv://afnanyaseen48_db_user:DAQE7m30ZxezipWw@krishi-mitra.g1zufip.mongodb.net/?appName=krishi-mitra")
+
+# Load environment variables from .env file
+load_dotenv(BASE_DIR / ".env.example")
+
+MONGODB_URI = os.getenv("MONGODB_URI")
 MONGODB_DB = os.getenv("MONGODB_DB", "crop_service")
 MONGODB_COLLECTION = os.getenv("MONGODB_COLLECTION", "predictions")
 
